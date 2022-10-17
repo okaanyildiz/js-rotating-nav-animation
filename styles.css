@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #333;
+    color: #222;
+}
+
+/* BURGER ICON */
+.burger-box {
+    margin-top: 115px;
+    margin-left: 115px;
+    display: inline-block;
+    position: fixed;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    height: 5px;
+    width: 35px;
+    background-color: #F2F2F2;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/* MAIN PAGE */
+
+.main-container {
+    background-color: #fafafa;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.main-container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.circle-box {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle {
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.main-content img {
+    max-width: 100%;
+}
+
+.main-content {
+    max-width: 1000px; 
+    margin: 50px auto;
+    color: #333;
+}
+
+.main-content h1 {
+    margin: 0;
+}
+
+.main-content p {
+    line-height: 1.5;
+}
+
+/* NAV */
+
+.nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+.main-container.show-nav + .nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+.nav ul li {
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+}
+
+.nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+.nav ul li + li + li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.nav a:hover {
+    color: #FF7979;
+    font-weight: bold;
+}
